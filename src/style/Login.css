@@ -1,0 +1,115 @@
+/* src/Login.css */
+
+/* Full background image with blur effect */
+.login-page {
+  background-image: url('../assets/login-image.jpg'); /* Adjust according to your directory structure */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Fill height of the viewport */
+  position: relative; /* Create a stacking context */
+  overflow: hidden; /* Hide any overflow */
+  animation: fadeIn 1s ease; /* Animation effect for background */
+}
+
+/* Add a blur overlay */
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6); /* White overlay with transparency */
+  backdrop-filter: blur(2px); /* Blur effect */
+  z-index: 1; /* Below the login container */
+  transition: backdrop-filter 0.5s ease; /* Smooth transition for the blur effect */
+}
+
+/* Fade-in animation for the background */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.login-container {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 400px;
+  background-color: #ffffff; /* White background for form */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.2s ease-in-out; /* Animation on hover */
+  position: relative; /* Ensure stacking context */
+  z-index: 2; /* Place above the overlay */
+}
+
+.login-container:hover {
+  transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #4CAF50; /* Green heading */
+  margin-bottom: 20px;
+  font-size: 24px; /* Increase font size */
+}
+
+.login-container label {
+  display: block;
+  margin: 15px 0 5px; /* Spacing around labels */
+  font-weight: bold; /* Bold labels */
+}
+
+.login-container input {
+  padding: 10px;
+  width: 85%; /* Full width */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded edges */
+  transition: border-color 0.3s ease; /* Transition effect */
+}
+
+.login-container input:focus {
+  border-color: #4CAF50; /* Change border color on focus */
+  outline: none; /* Remove outline */
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+  margin-top: 10px; /* Spacing */
+  font-size: 16px; /* Button text size */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.login-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.redirect-link {
+  text-align: center;
+  margin-top: 20px; /* Spacing above the link */
+}
+
+.redirect-link a {
+  color: #4CAF50; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.redirect-link a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}

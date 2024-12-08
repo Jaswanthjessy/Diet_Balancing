@@ -1,0 +1,113 @@
+/* General page styles */
+.leafy-greens-page {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
+    overflow: auto; /* Allow scrolling if needed */
+    background-color: #ffffff; /* Set a solid background color */
+    animation: fadeIn 0.5s; /* Fade-in animation for the page */
+}
+
+/* Container for leafy greens content */
+.leafy-greens-container {
+    padding: 20px; /* Padding for overall layout */
+    width: 100%; /* Use full width */
+    height: calc(100% - 60px); /* Full height minus button height */
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    animation: slideInFromTop 0.5s; /* Slide-in animation for the container */
+}
+
+/* Main title styles */
+.leafy-greens-container h2 {
+    color: #4CAF50; /* Title color */
+    text-align: center; /* Center the title */
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem; /* Title font size */
+    margin: 20px 0; /* Margin above and below title */
+    animation: fadeIn 0.3s; /* Fade-in animation for the title */
+}
+
+/* Each leafy green section styles */
+.leafy-green-section {
+    display: flex; /* Use flexbox to align image and text */
+    align-items: flex-start; /* Align items at the top */
+    padding: 20px; /* Padding inside each section */
+    border-bottom: 1px solid #e0e0e0; /* Border between sections */
+    opacity: 0; /* Start invisible for fade-in */
+    animation: fadeIn 0.3s forwards; /* Fade-in animation */
+    transition: all 0.3s ease; /* Add a transition effect */
+}
+
+.leafy-green-section:last-child {
+    border-bottom: none; /* Remove border for the last section */
+}
+
+.leafy-green-section:hover {
+    background-color: #f0f8e1; /* Light background on hover */
+    transform: scale(1.01); /* Add a scale effect on hover */
+}
+
+/* Image styles */
+.leafy-green-image {
+    width: 250px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounded corners for images */
+    margin-right: 20px; /* Space between image and text */
+    animation: zoomIn 0.3s; /* Zoom-in animation for the image */
+}
+
+/* Details section styles */
+.leafy-green-description {
+    flex: 1; /* Take up remaining space */
+    text-align: left; /* Align text to left */
+}
+
+/* Headers and lists */
+h3, h4 {
+    margin: 10px 0; /* Margin for headers */
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove padding */
+}
+
+li {
+    padding: 5px 0; /* Space between list items */
+}
+
+/* Animation styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        opacity: 1; /* Fade in to visible */
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100px); /* Start from the top */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* Move to the original position */
+        opacity: 1; /* Fade in to visible */
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5); /* Start from a smaller scale */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: scale(1); /* Move to the original scale */
+        opacity: 1; /* Fade in to visible */
+    }
+}

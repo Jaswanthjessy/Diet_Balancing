@@ -1,0 +1,129 @@
+/* src/Signup.css */
+
+.signup-page {
+  /* Full background image with blur effect */
+  background-image: url('../assets/signup-image.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the whole area */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Fill height of the viewport */
+  position: relative; /* Required for pseudo-elements */
+  overflow: hidden; /* Hide overflow */
+}
+
+.signup-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* White overlay with some opacity */
+  backdrop-filter: blur(2px); /* Blur effect */
+  animation: fadeIn 1s; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.signup-container {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background for form */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.2s ease-in-out; /* Animation on hover */
+  position: relative; /* Ensure stacking context */
+}
+
+.signup-container:hover {
+  transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #4CAF50; /* Green heading */
+  margin-bottom: 20px;
+  font-size: 24px; /* Increase font size */
+}
+
+.signup-container label {
+  display: block;
+  margin: 15px 0 5px; /* Spacing around labels */
+  font-weight: bold; /* Bold labels */
+}
+
+.signup-container input {
+  padding: 10px;
+  width: 85%; /* Full width */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded edges */
+  transition: border-color 0.3s ease; /* Transition effect */
+}
+
+.signup-container input:focus {
+  border-color: #4CAF50; /* Change border color on focus */
+  outline: none; /* Remove outline */
+}
+
+.signup-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+  margin-top: 10px; /* Spacing */
+  font-size: 16px; /* Button text size */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.signup-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.redirect-link {
+  text-align: center;
+  margin-top: 20px; /* Spacing above the link */
+}
+
+.redirect-link a {
+  color: #4CAF50; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.redirect-link a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.password-input {
+  position: relative; /* Needed to position the eye icon */
+}
+
+.password-input input {
+  width: 80%; /* Make input take full width */
+  padding-right: 30px; /* Add some padding for the icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 30px; /* Adjust position if needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 0.8em; /* Adjust icon size */
+  color: #070707; /* Icon color */
+}

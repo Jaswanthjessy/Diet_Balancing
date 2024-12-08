@@ -1,0 +1,112 @@
+.weight-loss-container {
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 700px; /* Increased max-width for better readability */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    position: relative; /* Ensure stacking context */
+    z-index: 1; /* Ensure content is above the blurred background */
+}
+
+.weight-loss-container h2 {
+    text-align: center;
+    color: #4CAF50; /* Green heading */
+    margin-bottom: 30px; /* Increased bottom margin for more space */
+    font-size: 28px; /* Larger font size for headings */
+}
+
+.food-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.food-list li {
+    background: #f8f8f8; /* Light background for food items */
+    margin: 10px 0;
+    padding: 20px; /* Increased padding for better touch targets */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation for hover effect */
+}
+
+.food-list li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover */
+}
+
+.diet-tips {
+    margin-top: 30px; /* Increased top margin for separation */
+    padding: 15px; /* Increased padding */
+    background: #e7f3fe; /* Light blue background */
+    border-radius: 5px;
+    border-left: 5px solid #2196F3; /* Blue left border for emphasis */
+}
+
+.diet-tips h3 {
+    margin-top: 0; /* Remove top margin for better alignment */
+    color: #2196F3; /* Matching color for tips heading */
+}
+
+.diet-tips p {
+    margin: 0; /* Remove margin for better spacing */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Apply the same background and layout styling as the other pages */
+.weight-loss-page {
+    position: relative;
+    text-align: center;
+    min-height: 100vh; /* Fill height of the viewport */
+    padding: 50px 0; /* Vertical padding */
+    overflow: hidden; /* Prevent content from spilling over */
+}
+
+/* Background image with blur effect */
+.weight-loss-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/weight-loss-background.jpg'); /* Path to the background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    filter: blur(3px); /* Applies blur effect only to the background image */
+    z-index: -1; /* Keeps the background behind the content */
+}
+
+.back-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Remove underline from links */
+.food-list li a {
+    text-decoration: none; /* Remove underline */
+    color: #45a049; /* Set color to match theme */
+    font-weight: bold;
+}
+
+.food-list li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover */
+}
+
+.food-list li a:hover {
+    color: #45a049; /* Darker green on hover */
+}

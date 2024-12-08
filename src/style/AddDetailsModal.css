@@ -1,0 +1,142 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Smooth fade-in and fade-out */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px; /* Max width set to prevent it from being too large */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow for added depth */
+    transform: scale(0.9); /* Initially scaled down */
+    animation: modalIn 0.4s ease forwards;
+    overflow: auto; /* Ensure the content inside modal doesn't overflow */
+    max-height: 80vh; /* Prevent modal from exceeding the viewport height */
+}
+
+@keyframes modalIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Header */
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    letter-spacing: 0.5px; /* Slight letter spacing for better readability */
+}
+
+/* Label */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+input:focus {
+    outline: none;
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /* Light green shadow */
+}
+
+/* Button Styling */
+button {
+    width: 48%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px 1%; /* Ensures buttons are evenly spaced */
+}
+
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Button Hover Effects */
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(2px); /* Button depression on click */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px; /* Reduced padding to fit better */
+        max-height: 80vh; /* Allow more room for smaller screens */
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0; /* Stack buttons vertically on smaller screens */
+    }
+}
+
+/* Close Button (for closing the modal with an 'X') */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333; /* Change color on hover */
+}
