@@ -34,7 +34,7 @@ const Signup = () => {
 
     // Proceed with form submission
     try {
-        const response = await fetch('http://localhost:8080/users', {
+        const response = await fetch('https://diet-production-e52e.up.railway.app/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
